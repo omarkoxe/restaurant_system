@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>تسجيل الدخول</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="login-page">
+
+    <div class="login-box">
+
+        <div class="login-icon">
+            🔐
+        </div>
+
+        <h1>رێڤەبەری</h1>
+
+        <p>تسجيل الدخول</p>
+
+        <input
+            id="username"
+            type="text"
+            placeholder="اسم المستخدم">
+
+        <input
+            id="password"
+            type="password"
+            placeholder="كلمة السر">
+
+        <button onclick="loginAdmin()">
+            دخول
+        </button>
+
+        <p id="loginMessage"
+           class="message">
+        </p>
+
+        <a href="/">
+            العودة إلى المطعم
+        </a>
+
+    </div>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>مطعمنا</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header class="top-bar">
+
+    <div class="logo">
+        🍽️ مطعمنا
+    </div>
+
+    <div class="top-actions">
+
+        <button onclick="toggleLanguage()" class="language-btn">
+            عربي / باديني
+        </button>
+
+        <a href="/login" class="admin-link">
+            🔐 <span data-ar="الإدارة"
+                    data-ku="رێڤەبەری">الإدارة</span>
+        </a>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="hero">
+
+        <h1
+            data-ar="مرحباً بكم في مطعمنا"
+            data-ku="بخێر بهێن بۆ چێشتخانا مە">
+            مرحباً بكم في مطعمنا
+        </h1>
+
+        <p
+            data-ar="قائمة الطعام"
+            data-ku="لیستا خوارنێ">
+            قائمة الطعام
+        </p>
+
+    </section>
+
+
+    <section class="menu-section">
+
+        <h2
+            data-ar="الأكلات"
+            data-ku="خوارن">
+            الأكلات
+        </h2>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="ابحث عن أكلة..."
+                oninput="renderFoods()">
+
+        </div>
+
+
+        <div id="foodContainer"
+             class="food-grid">
+        </div>
+
+    </section>
+
+
+    <section class="cart-section">
+
+        <h2
+            data-ar="السلة"
+            data-ku="سەبەتە">
+            السلة
+        </h2>
+
+        <div id="cartContainer">
+        </div>
+
+
+        <div class="cart-total">
+
+            <span
+                data-ar="المجموع الكلي"
+                data-ku="کویێ گشتی">
+                المجموع الكلي
+            </span>
+
+            <strong>
+                <span id="cartTotal">0</span> IQD
+            </strong>
+
+        </div>
+
+
+        <div class="customer-form">
+
+            <input
+                id="customerName"
+                type="text"
+                placeholder="اسم الزبون">
+
+            <input
+                id="phone"
+                type="text"
+                placeholder="رقم الهاتف">
+
+            <input
+                id="address"
+                type="text"
+                placeholder="العنوان">
+
+            <textarea
+                id="notes"
+                placeholder="ملاحظات على الطلب"></textarea>
+
+        </div>
+
+
+        <div class="cart-buttons">
+
+            <button
+                class="send-btn"
+                onclick="sendOrder()"
+                data-ar="إرسال الطلب"
+                data-ku="فرێکرنا داخوازیێ">
+                إرسال الطلب
+            </button>
+
+            <button
+                class="cancel-btn"
+                onclick="clearCart()"
+                data-ar="إلغاء الطلب"
+                data-ku="هەڵوەشاندنا داخوازیێ">
+                إلغاء الطلب
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

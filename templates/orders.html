@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>الطلبات</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header class="top-bar">
+
+    <div class="logo">
+        📦
+        <span
+            data-ar="الطلبات"
+            data-ku="داخوازی">
+            الطلبات
+        </span>
+    </div>
+
+    <div class="top-actions">
+
+        <button onclick="toggleLanguage()"
+                class="language-btn">
+            عربي / باديني
+        </button>
+
+        <a href="/admin"
+           class="admin-link">
+            رێڤەبەری
+        </a>
+
+        <button onclick="logoutAdmin()"
+                class="logout-btn">
+            خروج
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="orders-container">
+
+    <h1
+        data-ar="الطلبات"
+        data-ku="داخوازی">
+        الطلبات
+    </h1>
+
+    <div id="ordersContainer">
+    </div>
+
+</main>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
